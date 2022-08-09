@@ -1,5 +1,9 @@
-export default function Sub() {
+const Ninjas = () => {
   return (
-    <div>sub</div>
-  )
+    <div>
+      <h1>All Ninjas</h1>
+    </div>
+  );
 }
+ 
+export default Ninjas;
