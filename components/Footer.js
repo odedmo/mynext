@@ -1,5 +1,9 @@
-export default function Footer() {
+const Footer = () => {
   return (
-    <div>Footer</div>
-  )
+    <footer>
+      Copyright 2021 Ninja List
+    </footer>
+  );
 }
+ 
+export default Footer;
