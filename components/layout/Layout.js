@@ -4,11 +4,11 @@ import classes from './Layout.module.css'
 
 const Layout = ({ children }) => {
   return (
-    <content className={classes.content}>
+    <div className={classes.content}>
       <Navbar />
       { children }
       <Footer />
-    </content>
+    </div>
   );
 }
  
