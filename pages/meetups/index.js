@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import MeetupsList from '../../components/meetups/MeetupsList'
 
 const MEETUPS = [
@@ -15,11 +16,33 @@ const MEETUPS = [
   }
 ]
 
-const Meetups = () => {
+const Meetups = (props) => {
+
+  const {meetups} = props
 
   return (
-    <MeetupsList meetups={MEETUPS}/>
+    <MeetupsList meetups={meetups}/>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: {
+      meetups: MEETUPS
+    },
+    revalidate: 10
+  }
+}
+
+// export async function getServerSideProps(context) {
+//   const req = context.req
+//   const res = context.res
+  
+//   return {
+//     props: {
+//       meetups: MEETUPS
+//     }
+//   }
+// }
  
 export default Meetups;
