@@ -10,8 +10,18 @@ const handler = async (req, res) => {
     const data = req.body
     const { title, image, address } = data
 
-    const client = await MongoClient.connect('mongodb+srv://oded:password666@cluster0.nxzdg.mongodb.net/mytest?retryWrites=true&w=majority')
+    const client = await MongoClient.connect('mongodb+srv://oded:Y1lFMZyqdHstQ61s@cluster0.nxzdg.mongodb.net/mytest?retryWrites=true&w=majority')
     const db = client.db()
+
+    const meetupsCollection = db.collection('meetups')
+
+    const result = await meetupsCollection.insertOne(data)
+
+    client.close()
+
+    res.status(201).json({
+      message: 'Meetup inserted'
+    })
   }
 }
 
